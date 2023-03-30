@@ -6,6 +6,8 @@
 
 import './bootstrap';
 import { createApp } from 'vue';
+import router from './router/index';
+
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -13,7 +15,13 @@ import { createApp } from 'vue';
  * to use in your application's views. An example is included for you.
  */
 
-const app = createApp({});
+import AppComponent from './components/App.vue'
+
+const app = createApp({
+    components: {
+        AppComponent
+    }
+});
 
 import ExampleComponent from './components/ExampleComponent.vue';
 app.component('example-component', ExampleComponent);
@@ -37,3 +45,9 @@ app.component('example-component', ExampleComponent);
  */
 
 app.mount('#app');
+app.use(router);
+
+// Import Bootstrap and BootstrapVue CSS files (order is important)
+import 'bootstrap/dist/css/bootstrap.css'
+
+import "bootstrap/dist/js/bootstrap.js"
