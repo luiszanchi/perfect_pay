@@ -1,12 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import HelloTemplate from '../components/templates/HelloTemplate.vue';
+import CheckoutPage from '../components/pages/CheckoutPage.vue';
+import SuccessPage from '../components/pages/SuccessPage.vue'
 
 const routes = [
     {
         path: '/',
         name: 'home',
-        component: HelloTemplate
+        component: CheckoutPage
+    },
+    {
+        path: '/success',
+        name: 'success',
+        component: SuccessPage
     }
 ];
 
